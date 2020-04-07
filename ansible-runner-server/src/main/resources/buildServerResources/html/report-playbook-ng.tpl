@@ -3,7 +3,7 @@
         {{ pb.errorMessage }}
     </div>
     <div class="ar-summary" data-ng-if="pb.recaps.length > 0">
-        <span title="Click to show/hide hosts" class="handle handle_{{ expandState }}" ng-click="toggle()"></span>
+        <span title="Click to show/hide hosts" class="icon icon16 handle handle_{{ expandState }}" ng-click="toggle()"></span>
         <span class="ar-name">PLAY RECAP</span>
     </div>
     <div ng-show="expandState === 'expanded'" class="ar-nested-level ar-recap-container">
@@ -18,7 +18,7 @@
 </div>
 <div data-ng-repeat="play in pb.plays" data-ng-controller="arPlayCtrl" class="ar-play-container">
   <div class="ar-summary">
-      <span title="Click to show/hide tasks" class="handle handle_{{ expandState }}" ng-click="toggle()"></span>
+      <span title="Click to show/hide tasks" class="icon icon16 handle handle_{{ expandState }}" ng-click="toggle()"></span>
       <span class="ar-name">PLAY [{{ play.name }}]</span>
       <span class="ar-summary-col">{{ play.duration }}s</span>
       <span class="ar-summary-col" ng-class="{'ar-failed': play.hostStatus.failed > 0}">failed={{ play.hostStatus.failed || 0 }}</span>
@@ -30,7 +30,7 @@
     <div data-ng-if="isSkipped(play)" class="ar-skipping">Skipped play</div>
     <div class="ar-task-container" data-ng-if="!isSkipped(play) && search.showFacts" data-ng-controller="arExpandCollapseCtrl">
         <div class="ar-summary">
-            <span title="Click to show/hide facts" class="handle handle_{{ expandState }}" ng-click="toggle()"></span>
+            <span title="Click to show/hide facts" class="icon icon16 handle handle_{{ expandState }}" ng-click="toggle()"></span>
             <span class="ar-name">GATHERING FACTS</span>
         </div>
         <ul ng-show="expandState === 'expanded'">
@@ -42,7 +42,7 @@
     </div>
     <div class="ar-task-container" data-ng-if="!isSkipped(play)" data-ng-repeat="task in filteredTasks = (play.tasks | filter:taskSearch)" data-ng-controller="arTaskCtrl">
         <div class="ar-summary">
-            <span title="Click to show/hide hosts" class="handle handle_{{ expandState }}" ng-click="toggle()"></span>
+            <span title="Click to show/hide hosts" class="icon icon16 handle handle_{{ expandState }}" ng-click="toggle()"></span>
             <span class="ar-name">{{ task.notified ? 'NOTIFIED' : 'TASK' }} [{{ task.name }}]</span>
             <span class="ar-summary-col">{{ task.duration }}s</span>
             <span class="ar-summary-col" ng-class="{'ar-failed': task.hostStatus.failed > 0}">failed={{ task.hostStatus.failed || 0 }}</span>

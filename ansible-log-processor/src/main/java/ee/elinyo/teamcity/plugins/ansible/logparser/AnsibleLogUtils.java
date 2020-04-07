@@ -4,7 +4,7 @@ package ee.elinyo.teamcity.plugins.ansible.logparser;
 public final class AnsibleLogUtils {
     
     private static final String PLAY_START = "PLAY [";
-    private static final String TASK_START = "TASK:";
+    private static final String TASK_START = "TASK [";
     private static final String NOTIFIED_START = "NOTIFIED:";
     private static final String GATHER_FACT_START = "GATHERING FACTS";
     private static final String FATAL_START = "FATAL:";

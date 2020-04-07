@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Task {
     
     private static final Pattern TASK_FIRST_LINE_PATTERN = Pattern
-            .compile("^(TASK|NOTIFIED):\\s+\\Q[\\E(.+)\\Q]\\E");
+            .compile("^(TASK|NOTIFIED)\\s+\\Q[\\E(.+)\\Q]\\E");
 
     private long startedAt;
     private long finishedAt;
